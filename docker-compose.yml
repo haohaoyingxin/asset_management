@@ -8,9 +8,11 @@ services:
       - "3000:3000"
     links:
       - "flask_sqlite"
+    restart: on-failure
   flask_sqlite:
     build:
       context: ./flask_sqlite
     container_name: flask_sqlite
     ports:
       - "5000:5000"
+    restart: on-failure

@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  grafana:
+    build:
+      context: ./grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    links:
+      - "flask_sqlite"
+  flask_sqlite:
+    build:
+      context: ./flask_sqlite
+    container_name: flask_sqlite
+    ports:
+      - "5000:5000"

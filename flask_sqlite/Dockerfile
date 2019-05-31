@@ -1,6 +1,3 @@
-FROM python:3.6
-RUN mkdir -p /usr/src/app
+FROM asset_management_flask_sqlite:latest
 WORKDIR /usr/src/app
-COPY . /usr/src/app
-RUN pip install -r requirements.txt
 CMD ["python","index.py"]
